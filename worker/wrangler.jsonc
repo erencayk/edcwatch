@@ -1,0 +1,23 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "edcwatch",
+  "main": "src/index.js",
+  "compatibility_date": "2025-09-01",
+  // Answer a client's close frame automatically, otherwise a socket the client
+  // closed stays in CLOSING and the client never sees it end.
+  "compatibility_flags": ["web_socket_auto_reply_to_close"],
+
+  // Invite page (shared with the Node server).
+  "assets": {
+    "directory": "../server/public",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+
+  // One Durable Object per room. The free plan only allows SQLite-backed
+  // classes, hence new_sqlite_classes.
+  "durable_objects": {
+    "bindings": [{ "name": "ROOM", "class_name": "Room" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["Room"] }]
+}

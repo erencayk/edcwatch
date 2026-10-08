@@ -1,0 +1,20 @@
+{
+  "name": "edcwatch-server",
+  "version": "0.1.0",
+  "description": "EdcWatch relay server (watch together)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "ws": "^8.22.0"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  }
+}

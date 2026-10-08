@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>EdcWatch</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <span class="logo" aria-hidden="true">▶</span>
+    <h1>EdcWatch</h1>
+  </header>
+
+  <p id="banner" class="banner" role="alert" hidden></p>
+
+  <!-- Not in a room -->
+  <main id="view-start" hidden>
+    <label class="field">
+      <span>Adın</span>
+      <input id="name" type="text" maxlength="24" placeholder="Örn. Eren" autocomplete="nickname">
+    </label>
+
+    <section class="card">
+      <h2>Yeni oda</h2>
+      <label class="field">
+        <span>Film / dizi sayfasının linki</span>
+        <input id="site-url" type="url" inputmode="url" placeholder="https://…" autocapitalize="off" autocorrect="off" spellcheck="false">
+      </label>
+      <button id="btn-create" class="primary" type="button">Oda kur ve aç</button>
+    </section>
+
+    <section class="card">
+      <h2>Odaya katıl</h2>
+      <label class="field">
+        <span>Davet linki veya kod</span>
+        <input id="invite" type="text" placeholder="https://…/j/ABC234" autocapitalize="off" autocorrect="off" spellcheck="false">
+      </label>
+      <button id="btn-join" type="button">Katıl</button>
+    </section>
+
+    <details>
+      <summary>Ayarlar</summary>
+      <label class="field">
+        <span>Sunucu adresi</span>
+        <input id="server" type="url" inputmode="url" placeholder="https://edcwatch.example.com" autocapitalize="off" autocorrect="off" spellcheck="false">
+      </label>
+      <button id="btn-save-server" type="button">Kaydet</button>
+    </details>
+  </main>
+
+  <!-- In a room -->
+  <main id="view-room" hidden>
+    <section class="card">
+      <div class="row">
+        <span id="dot" class="dot"></span>
+        <strong id="conn">Bağlanıyor…</strong>
+        <code id="code" class="code"></code>
+      </div>
+      <p id="video-state" class="muted"></p>
+      <ul id="members" class="members"></ul>
+    </section>
+
+    <div class="row buttons">
+      <button id="btn-copy" class="primary" type="button">Davet linkini kopyala</button>
+      <button id="btn-share" type="button" hidden>Paylaş</button>
+    </div>
+    <button id="btn-leave" class="danger" type="button">Odadan ayrıl</button>
+  </main>
+
+  <script src="popup.js"></script>
+</body>
+</html>

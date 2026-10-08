@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>EdcWatch</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main>
+    <div class="logo" aria-hidden="true">▶</div>
+    <h1>EdcWatch</h1>
+
+    <section id="home" hidden>
+      <p class="lead">Birlikte izleme sunucusu çalışıyor.</p>
+      <p class="muted">Oda kurmak için tarayıcıdaki EdcWatch eklentisini aç, film/dizi sayfasının linkini yapıştır ve “Oda kur”a bas. Çıkan davet linkini arkadaşına gönder.</p>
+    </section>
+
+    <section id="invite" hidden>
+      <p class="lead">Birlikte izlemeye davetlisin</p>
+      <p class="site" id="site">…</p>
+      <p class="muted" id="people"></p>
+
+      <label class="field">
+        <span>Adın</span>
+        <input id="name" type="text" maxlength="24" placeholder="Adın" autocomplete="nickname">
+      </label>
+
+      <button id="join" class="primary" type="button" disabled>Katıl ve izle</button>
+      <p id="status" class="status" role="status"></p>
+
+      <div id="noext" class="note" hidden>
+        <strong>EdcWatch uzantısı bulunamadı.</strong>
+        <p>Bu sayfayı uzantının kurulu olduğu Safari’de aç. Uzantı Safari ayarlarında etkin olmalı ve “Tüm web sitelerine izin ver” seçili olmalı.</p>
+      </div>
+    </section>
+
+    <section id="gone" hidden>
+      <p class="lead">Bu oda bulunamadı</p>
+      <p class="muted">Davet linki eski olabilir ya da oda kapatılmış. Arkadaşından yeni bir link iste.</p>
+    </section>
+  </main>
+  <script src="/join.js"></script>
+</body>
+</html>
